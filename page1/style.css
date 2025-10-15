@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root{
+  --mustard: #f1b619;
+  --form-bg: #f6f9fa;
+  --muted: #9aa3a7;
+  --field-border: #e0e5e7;
+  --label-color: #222f33;
+  --accent: #f1b619;
+  --radius: 3px;
+  --container-width: 1100px;
+  --gap-vertical: 14px;
+  --gap-horizontal: 18px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 14px;
+}
+
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--mustard);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  color: var(--label-color);
+}
+
+#form-container {
+  width: var(--container-width);
+  max-width: calc(100% - 40px);
+  background: var(--form-bg);
+  border-radius: 2px;
+  padding: 28px 36px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+#student-form {
+  display: grid;
+  grid-template-columns: 200px 1fr 220px;
+  column-gap: var(--gap-horizontal);
+  row-gap: var(--gap-vertical);
+  align-items: start;
+}
+
+#student-form > h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2b2f;
+}
+
+.note {
+  font-weight: bold;
+  color: #9d7171 !important;
+}
+
+
+#student-form label {
+  grid-column: 1;
+  align-self: center;
+  font-weight: 600;
+  margin-top: 6px;
+  color: var(--label-color);
+}
+
+
+#student-form input[type="text"],
+#student-form input[type="email"],
+#student-form input[type="number"],
+#student-form select,
+#student-form textarea {
+  grid-column: 2;
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--field-border);
+  border-radius: var(--radius);
+  background: white;
+  font-size: 13px;
+  color: #263238;
+}
+
+
+#student-form span {
+  grid-column: 3;
+  font-size: 12px;
+  color: var(--muted);
+  align-self: center;
+}
+
+
+#dob { 
+  grid-column: 2; 
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+}
+
+#dob select { width: 110px; }
+
+
+#gender, #hobbies, #courses {
+  grid-column: 2; 
+  display: flex; 
+  gap: 18px; 
+  align-items: center; 
+}
+
+#gender input[type="radio"],
+#hobbies input[type="checkbox"],
+#courses input[type="radio"] {
+  transform: scale(0.95);
+  margin: 0; 
+  vertical-align: middle;
+}
+
+#gender label,
+#hobbies label,
+#courses label {
+  display: flex;
+  align-items: center; 
+  margin: 0; 
+  line-height: 1.2;
+}
+
+
+#address { 
+  grid-column: 2; 
+  min-height: 140px; 
+  resize: vertical; 
+  padding: 12px; 
+}
+
+
+#qualification {
+  grid-column: 2;
+  min-width: 600px; 
+  border-collapse: collapse;
+  margin-top: 6px;
+  display: block;       
+  overflow-x: auto;     
+  white-space: nowrap;  
+}
+
+#qualification thead th {
+  background: var(--accent);
+  color: white;
+  padding: 10px 12px;
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+#qualification tbody td {
+  padding: 10px;
+  border: 1px solid #e9d9a8;
+  vertical-align: middle;
+}
+
+#qualification input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--field-border);
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+
+#button-container { 
+  grid-column: 1 / -1; 
+  display: flex; 
+  justify-content: flex-start; 
+  margin-top: 6px; 
+}
+
+#send {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid rgba(241,182,25,0.8);
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+#send:hover { 
+  background: var(--accent); 
+  color: white; 
+  transition: background .18s ease; 
+}
+
+
+#student-form input:focus,
+#student-form select:focus,
+#student-form textarea:focus,
+#qualification input:focus {
+  outline: 3px solid rgba(241,182,25,0.12);
+  border-color: rgba(241,182,25,0.5);
+}
+
+@media (max-width: 880px) {
+  #student-form { grid-template-columns: 1fr; }
+  #student-form label { grid-column: 1; margin-bottom: 6px; }
+  #student-form input,
+  #student-form select,
+  #student-form textarea,
+  #qualification { grid-column: 1; }
+  #student-form span { grid-column: 1; }
+  #button-container { justify-content: center; }
+}

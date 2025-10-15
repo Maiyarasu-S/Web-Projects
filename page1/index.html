@@ -1,0 +1,141 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div id="form-container">
+      <form id="student-form">
+
+        <h2>Student Registration Form</h2>
+
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="First Name">
+        <span class="note">(Max 30 Characters A-Z and a-z)</span>
+
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Last Name">
+        <span class="note">(Max 30 Characters A-Z and a-z)</span>
+
+
+        <label>Date of Birth</label>
+        <div id="dob">
+          <select id="day" name="day">
+            <option>Days</option>
+
+          </select>
+          <select id="month" name="month">
+            <option>Months</option>
+          </select>
+          <select id="year" name="year">
+            <option>Years</option>
+          </select>
+        </div>
+
+
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" placeholder="Email ID">
+
+
+        <label>Gender</label>
+        <div id="gender">
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </div>
+
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+
+        
+        <label for="pincode">Pin Code</label>
+        <input type="text" id="pincode" name="pincode" placeholder="Pin Code">
+
+        
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="State">
+
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="City">
+
+
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" placeholder="Country">
+
+
+        <label>Hobbies</label>
+        <div id="hobbies">
+          <input type="checkbox" id="drawing" name="hobbies" value="Drawing">
+          <label for="drawing">Drawing</label>
+          <input type="checkbox" id="singing" name="hobbies" value="Singing">
+          <label for="singing">Singing</label>
+          <input type="checkbox" id="dancing" name="hobbies" value="Dancing">
+          <label for="dancing">Dancing</label>
+          <input type="checkbox" id="sketching" name="hobbies" value="Sketching">
+          <label for="sketching">Sketching</label>
+        </div>
+
+        
+        <label>Qualification</label>
+        <table id="qualification">
+          <thead>
+            <tr>
+              <th>Sl.No.</th>
+              <th>Examination</th>
+              <th>Board</th>
+              <th>Percentage</th>
+              <th>Year of Passing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="text" placeholder="Examination"></td>
+              <td><input type="text" placeholder="Board"></td>
+              <td><input type="text" placeholder="Percentage"></td>
+              <td><input type="text" placeholder="Year of Passing"></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" placeholder="Examination"></td>
+              <td><input type="text" placeholder="Board"></td>
+              <td><input type="text" placeholder="Percentage"></td>
+              <td><input type="text" placeholder="Year of Passing"></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" placeholder="Examination"></td>
+              <td><input type="text" placeholder="Board"></td>
+              <td><input type="text" placeholder="Percentage"></td>
+              <td><input type="text" placeholder="Year of Passing"></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <label>Courses</label>
+        <div id="courses">
+          <input type="radio" id="bca" name="course" value="BCA">
+          <label for="bca">BCA</label>
+          <input type="radio" id="mca" name="course" value="MCA">
+          <label for="mca">MCA</label>
+        </div>
+
+        
+        <div id="button-container">
+          <button type="submit" id="send">Send Now</button>
+        </div>
+
+      </form>
+    </div>
+
+  </body>
+  </html>
