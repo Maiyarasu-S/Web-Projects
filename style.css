@@ -1,4 +1,4 @@
-/* Basic Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +6,9 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Page background and container */
+
 body {
-  background: #f5f5f5;
+  background: #443636;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,13 +24,13 @@ body {
   max-width: 700px;
 }
 
-/* Heading */
+
 h1 {
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Cards layout */
+
 .cards {
   display: flex;
   flex-direction: column;
@@ -38,19 +38,20 @@ h1 {
   margin-top: 30px;
 }
 
-/* Individual card styling */
+
 .card {
   text-decoration: none;
   padding: 20px;
   border-radius: 10px;
-  background: #f0f0f0;
+  background: #000000;
   transition: transform 0.2s, background 0.2s;
-  color: #222;
+  color: #cdb2b2;
 }
 
 .card:hover {
-  background: #ffe08a;
+  background: #cdc9bf;
   transform: translateY(-5px);
+  color: black;
 }
 
 .card h2 {
@@ -62,7 +63,7 @@ h1 {
   font-size: 1rem;
 }
 
-/* Footer */
+
 footer {
   margin-top: 40px;
   font-size: 0.9rem;
