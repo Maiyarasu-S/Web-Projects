@@ -37,6 +37,7 @@ body {
   margin: 0 auto;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 #student-form {
@@ -50,9 +51,10 @@ body {
 #student-form > h2 {
   grid-column: 1 / -1;
   margin: 0 0 18px 0;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: #1f2b2f;
+  word-wrap: break-word;
 }
 
 .note {
@@ -95,6 +97,7 @@ body {
   display: flex; 
   gap: 8px; 
   align-items: center; 
+  flex-wrap: wrap;
 }
 
 #dob select { width: 110px; }
@@ -104,6 +107,7 @@ body {
   display: flex; 
   gap: 18px; 
   align-items: center; 
+  flex-wrap: wrap;
 }
 
 #gender input[type="radio"],
@@ -132,7 +136,7 @@ body {
 
 #qualification {
   grid-column: 2;
-  min-width: 600px; 
+  width: 100%;
   border-collapse: collapse;
   margin-top: 6px;
   display: block;       
@@ -202,8 +206,8 @@ body {
     grid-template-columns: 150px 1fr;
   }
   #qualification {
-    min-width: unset;
     width: 100%;
+    min-width: unset;
   }
 }
 
@@ -211,21 +215,41 @@ body {
   body {
     padding: 20px 10px;
   }
+
   #student-form {
     grid-template-columns: 1fr;
   }
+
+  #student-form > h2 {
+    font-size: 20px;
+    text-align: center;
+    grid-column: 1;
+  }
+
   #student-form label {
+    grid-column: 1;
     margin-bottom: 4px;
   }
+
+  #student-form input,
+  #student-form select,
+  #student-form textarea,
+  #qualification,
   #student-form span {
     grid-column: 1;
+    width: 100%;
+  }
+
+  #student-form span {
     margin-top: -6px;
     margin-bottom: 10px;
   }
+
   #qualification {
     display: block;
     overflow-x: auto;
   }
+
   #button-container {
     justify-content: center;
   }
@@ -235,8 +259,22 @@ body {
   :root {
     font-size: 13px;
   }
+
+  #form-container {
+    padding: 16px;
+  }
+
+  #student-form > h2 {
+    font-size: 18px;
+    white-space: normal;
+  }
+
   #send {
     width: 100%;
     text-align: center;
+  }
+
+  #dob select {
+    width: 100%;
   }
 }
