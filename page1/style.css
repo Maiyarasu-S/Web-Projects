@@ -18,6 +18,7 @@
 }
 
 html, body { height: 100%; margin: 0; }
+
 body {
   background: var(--mustard);
   display: flex;
@@ -28,13 +29,14 @@ body {
 }
 
 #form-container {
-  width: var(--container-width);
-  max-width: calc(100% - 40px);
+  width: 100%;
+  max-width: var(--container-width);
   background: var(--form-bg);
-  border-radius: 2px;
-  padding: 28px 36px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.03);
+  border-radius: 6px;
+  padding: 24px;
+  margin: 0 auto;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 #student-form {
@@ -58,7 +60,6 @@ body {
   color: #9d7171 !important;
 }
 
-
 #student-form label {
   grid-column: 1;
   align-self: center;
@@ -66,7 +67,6 @@ body {
   margin-top: 6px;
   color: var(--label-color);
 }
-
 
 #student-form input[type="text"],
 #student-form input[type="email"],
@@ -83,14 +83,12 @@ body {
   color: #263238;
 }
 
-
 #student-form span {
   grid-column: 3;
   font-size: 12px;
   color: var(--muted);
   align-self: center;
 }
-
 
 #dob { 
   grid-column: 2; 
@@ -100,7 +98,6 @@ body {
 }
 
 #dob select { width: 110px; }
-
 
 #gender, #hobbies, #courses {
   grid-column: 2; 
@@ -126,14 +123,12 @@ body {
   line-height: 1.2;
 }
 
-
 #address { 
   grid-column: 2; 
   min-height: 140px; 
   resize: vertical; 
   padding: 12px; 
 }
-
 
 #qualification {
   grid-column: 2;
@@ -142,7 +137,8 @@ body {
   margin-top: 6px;
   display: block;       
   overflow-x: auto;     
-  white-space: nowrap;  
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 #qualification thead th {
@@ -168,7 +164,6 @@ body {
   font-size: 13px;
 }
 
-
 #button-container { 
   grid-column: 1 / -1; 
   display: flex; 
@@ -180,11 +175,12 @@ body {
   background: transparent;
   color: var(--accent);
   border: 2px solid rgba(241,182,25,0.8);
-  padding: 10px 18px;
+  padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   box-shadow: none;
+  font-size: 15px;
 }
 
 #send:hover { 
@@ -192,7 +188,6 @@ body {
   color: white; 
   transition: background .18s ease; 
 }
-
 
 #student-form input:focus,
 #student-form select:focus,
@@ -202,13 +197,46 @@ body {
   border-color: rgba(241,182,25,0.5);
 }
 
-@media (max-width: 880px) {
-  #student-form { grid-template-columns: 1fr; }
-  #student-form label { grid-column: 1; margin-bottom: 6px; }
-  #student-form input,
-  #student-form select,
-  #student-form textarea,
-  #qualification { grid-column: 1; }
-  #student-form span { grid-column: 1; }
-  #button-container { justify-content: center; }
+@media (max-width: 1024px) {
+  #student-form {
+    grid-template-columns: 150px 1fr;
+  }
+  #qualification {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+  #student-form {
+    grid-template-columns: 1fr;
+  }
+  #student-form label {
+    margin-bottom: 4px;
+  }
+  #student-form span {
+    grid-column: 1;
+    margin-top: -6px;
+    margin-bottom: 10px;
+  }
+  #qualification {
+    display: block;
+    overflow-x: auto;
+  }
+  #button-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+  #send {
+    width: 100%;
+    text-align: center;
+  }
 }
