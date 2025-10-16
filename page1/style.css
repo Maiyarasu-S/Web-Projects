@@ -216,7 +216,20 @@ body {
 
 @media (max-width: 768px) {
   body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     padding: 20px 10px;
+  }
+
+  #form-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #student-form {
@@ -224,35 +237,74 @@ body {
   }
 
   #student-form > h2 {
-    font-size: 20px;
     text-align: center;
+    margin-bottom: 20px;
   }
 
   #student-form label {
-    grid-column: 1;
     margin-bottom: 4px;
   }
 
   #student-form input,
   #student-form select,
-  #student-form textarea,
-  #qualification,
-  #student-form span {
-    grid-column: 1;
+  #student-form textarea {
     width: 100%;
     max-width: 100%;
   }
 
-  #student-form span {
-    margin-top: -6px;
-    margin-bottom: 10px;
+  .note {
     white-space: nowrap;
-    text-align: right;
+    word-break: normal;
+    text-align: left;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .dob {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .dob input,
+  .dob select {
+    width: 30%;
+    min-width: 60px;
+    font-size: 13px;
+  }
+
+  .gender, .courses {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gender label, .courses label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hobbies label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
   }
 
   #qualification {
-    display: block;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
+    margin: 0;
   }
 
   #button-container {
@@ -278,13 +330,17 @@ body {
     text-align: center;
   }
 
-  #dob select {
-    width: 100%;
-  }
-
   #student-form span {
     font-size: 12px;
-    text-align: left;
     display: block;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  #dob select, .dob input {
+    width: 30%;
+    min-width: 50px;
+    font-size: 12px;
   }
 }
