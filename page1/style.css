@@ -29,15 +29,13 @@ body {
 }
 
 #form-container {
-  width: 100%;
-  max-width: var(--container-width);
+  width: var(--container-width);
+  max-width: calc(100% - 40px);
   background: var(--form-bg);
-  border-radius: 6px;
-  padding: 24px;
-  margin: 0 auto;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.05);
-  overflow: hidden;
+  border-radius: 2px;
+  padding: 28px 36px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
 }
 
 #student-form {
@@ -51,10 +49,9 @@ body {
 #student-form > h2 {
   grid-column: 1 / -1;
   margin: 0 0 18px 0;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   color: #1f2b2f;
-  text-align: center;
 }
 
 .note {
@@ -77,14 +74,12 @@ body {
 #student-form textarea {
   grid-column: 2;
   width: 100%;
-  max-width: 100%;
   padding: 9px 10px;
   border: 1px solid var(--field-border);
   border-radius: var(--radius);
   background: white;
   font-size: 13px;
   color: #263238;
-  box-sizing: border-box;
 }
 
 #student-form span {
@@ -92,7 +87,6 @@ body {
   font-size: 12px;
   color: var(--muted);
   align-self: center;
-  white-space: nowrap;
 }
 
 #dob { 
@@ -100,7 +94,6 @@ body {
   display: flex; 
   gap: 8px; 
   align-items: center; 
-  flex-wrap: wrap;
 }
 
 #dob select { width: 110px; }
@@ -110,7 +103,6 @@ body {
   display: flex; 
   gap: 18px; 
   align-items: center; 
-  flex-wrap: wrap;
 }
 
 #gender input[type="radio"],
@@ -139,13 +131,12 @@ body {
 
 #qualification {
   grid-column: 2;
-  width: 100%;
+  min-width: 600px; 
   border-collapse: collapse;
   margin-top: 6px;
   display: block;       
   overflow-x: auto;     
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;  
 }
 
 #qualification thead th {
@@ -182,12 +173,11 @@ body {
   background: transparent;
   color: var(--accent);
   border: 2px solid rgba(241,182,25,0.8);
-  padding: 12px 20px;
+  padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   box-shadow: none;
-  font-size: 15px;
 }
 
 #send:hover { 
@@ -202,145 +192,4 @@ body {
 #qualification input:focus {
   outline: 3px solid rgba(241,182,25,0.12);
   border-color: rgba(241,182,25,0.5);
-}
-
-@media (max-width: 1024px) {
-  #student-form {
-    grid-template-columns: 150px 1fr;
-  }
-  #qualification {
-    width: 100%;
-    min-width: unset;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px 10px;
-  }
-
-  #form-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  #student-form {
-    grid-template-columns: 1fr;
-  }
-
-  #student-form > h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  #student-form label {
-    margin-bottom: 4px;
-  }
-
-  #student-form input,
-  #student-form select,
-  #student-form textarea {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .note {
-    white-space: nowrap;
-    word-break: normal;
-    text-align: left;
-    margin-top: 4px;
-    display: block;
-  }
-
-  .dob {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-    flex-wrap: nowrap;
-  }
-
-  .dob input,
-  .dob select {
-    width: 30%;
-    min-width: 60px;
-    font-size: 13px;
-  }
-
-  .gender, .courses {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .gender label, .courses label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-  }
-
-  .hobbies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .hobbies label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-  }
-
-  #qualification {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    margin: 0;
-  }
-
-  #button-container {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    font-size: 13px;
-  }
-
-  #form-container {
-    padding: 16px;
-  }
-
-  #student-form > h2 {
-    font-size: 18px;
-  }
-
-  #send {
-    width: 100%;
-    text-align: center;
-  }
-
-  #student-form span {
-    font-size: 12px;
-    display: block;
-    text-align: left;
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  #dob select, .dob input {
-    width: 30%;
-    min-width: 50px;
-    font-size: 12px;
-  }
 }
