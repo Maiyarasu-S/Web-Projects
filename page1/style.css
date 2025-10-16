@@ -54,7 +54,7 @@ body {
   font-size: 22px;
   font-weight: 600;
   color: #1f2b2f;
-  word-wrap: break-word;
+  text-align: center;
 }
 
 .note {
@@ -77,12 +77,14 @@ body {
 #student-form textarea {
   grid-column: 2;
   width: 100%;
+  max-width: 100%;
   padding: 9px 10px;
   border: 1px solid var(--field-border);
   border-radius: var(--radius);
   background: white;
   font-size: 13px;
   color: #263238;
+  box-sizing: border-box;
 }
 
 #student-form span {
@@ -90,6 +92,7 @@ body {
   font-size: 12px;
   color: var(--muted);
   align-self: center;
+  white-space: nowrap;
 }
 
 #dob { 
@@ -223,7 +226,6 @@ body {
   #student-form > h2 {
     font-size: 20px;
     text-align: center;
-    grid-column: 1;
   }
 
   #student-form label {
@@ -238,11 +240,14 @@ body {
   #student-form span {
     grid-column: 1;
     width: 100%;
+    max-width: 100%;
   }
 
   #student-form span {
     margin-top: -6px;
     margin-bottom: 10px;
+    white-space: nowrap;
+    text-align: right;
   }
 
   #qualification {
@@ -266,7 +271,6 @@ body {
 
   #student-form > h2 {
     font-size: 18px;
-    white-space: normal;
   }
 
   #send {
@@ -276,5 +280,11 @@ body {
 
   #dob select {
     width: 100%;
+  }
+
+  #student-form span {
+    font-size: 12px;
+    text-align: left;
+    display: block;
   }
 }
